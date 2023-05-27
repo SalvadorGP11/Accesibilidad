@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { HomeComponent } from 'src/app/modules/home/home.component';
 import { AboutComponent } from 'src/app/modules/about/about.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SharedModule } from 'src/app/shared/shared.module';
+
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import { FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -39,7 +39,15 @@ import { TableReservedComponent } from 'src/app/modules/reservations/table-reser
 import { MatTableModule } from '@angular/material/table';
 import { ReservationsComponent } from 'src/app/modules/reservations/reservations.component';
 import { SatisfactionFormComponent } from 'src/app/modules/login/satisfaction-form/satisfaction-form.component';
+import { AccessComponent } from 'src/app/modules/access/access.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 //import {MatDateFnsModule} from '@angular/material-date-fns-adapter';
+
 
 
 @NgModule({
@@ -69,7 +77,8 @@ import { SatisfactionFormComponent } from 'src/app/modules/login/satisfaction-fo
         ImgExploreComponent,
         ReservationsComponent,
         SatisfactionFormComponent,
-        TableReservedComponent
+        TableReservedComponent,
+        AccessComponent
     ],
     imports: [
         CommonModule,
@@ -86,7 +95,13 @@ import { SatisfactionFormComponent } from 'src/app/modules/login/satisfaction-fo
         MatFormFieldModule,
         MatInputModule,
         MatSelectModule,
-        MatTableModule
+        MatTableModule,
+        NgIf,
+        MatSidenavModule,
+        MatButtonModule,
+        MatRadioModule,
+        MatMenuModule,
+        MatIconModule
     ]
 })
 export class DefaultModule { }
