@@ -14,6 +14,9 @@ var footer_component_1 = require("./components/footer/footer.component");
 var router_1 = require("@angular/router");
 var flex_layout_1 = require("@angular/flex-layout");
 var angular_fontawesome_1 = require("@fortawesome/angular-fontawesome");
+var access_component_1 = require("../modules/access/access.component");
+var icon_1 = require("@angular/material/icon");
+var menu_1 = require("@angular/material/menu");
 var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
@@ -21,17 +24,21 @@ var SharedModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 header_component_1.HeaderComponent,
-                footer_component_1.FooterComponent
+                footer_component_1.FooterComponent,
+                access_component_1.AccessComponent
             ],
             imports: [
                 common_1.CommonModule,
                 router_1.RouterModule,
                 flex_layout_1.FlexLayoutModule,
-                angular_fontawesome_1.FontAwesomeModule
+                angular_fontawesome_1.FontAwesomeModule,
+                icon_1.MatIconModule,
+                menu_1.MatMenuModule
             ],
             exports: [
                 header_component_1.HeaderComponent,
-                footer_component_1.FooterComponent
+                footer_component_1.FooterComponent,
+                access_component_1.AccessComponent
             ]
         })
     ], SharedModule);

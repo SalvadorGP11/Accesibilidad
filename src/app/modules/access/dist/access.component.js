@@ -12,7 +12,38 @@ var forms_1 = require("@angular/forms");
 var AccessComponent = /** @class */ (function () {
     function AccessComponent() {
         this.mode = new forms_1.FormControl('over');
+        this.fontSizeChanged = new core_1.EventEmitter();
+        this.isCursorIncreased = false;
+        this.originalCursor = '';
+        this.isGuideVisible = false;
+        this.guidePositionX = 0;
+        this.guidePositionY = 0;
+        this.speechSynthesis = window.speechSynthesis;
+        this.speechUtterance = new SpeechSynthesisUtterance();
     }
+    AccessComponent.prototype.startReading = function () {
+        var textToRead = document.documentElement.innerText;
+        this.speechUtterance.text = textToRead;
+        this.speechSynthesis.speak(this.speechUtterance);
+    };
+    AccessComponent.prototype.pauseReading = function () {
+        this.speechSynthesis.pause();
+    };
+    AccessComponent.prototype.resumeReading = function () {
+        this.speechSynthesis.resume();
+    };
+    AccessComponent.prototype.stopReading = function () {
+        this.speechSynthesis.cancel();
+    };
+    AccessComponent.prototype.increaseFontSize = function () {
+        this.fontSizeChanged.emit(15); // Aumenta el tamaño de fuente en 2 píxeles
+    };
+    AccessComponent.prototype.decreaseFontSize = function () {
+        this.fontSizeChanged.emit(-15); // Disminuye el tamaño de fuente en 2 píxeles
+    };
+    __decorate([
+        core_1.Output()
+    ], AccessComponent.prototype, "fontSizeChanged");
     AccessComponent = __decorate([
         core_1.Component({
             selector: 'app-access',

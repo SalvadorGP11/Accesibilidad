@@ -1,7 +1,28 @@
 <div class="container-main">
     <div class="title-container">
-        <h1>Hotel Rooms </h1>
-        <h3>Experience comfort and luxury in our elegant rooms</h3>
+        <h1 [style.fontSize.px]="fontSizeh1">Hotel Rooms </h1>
+        <h3 [style.fontSize.px]="fontSizeh3">Experience comfort and luxury in our elegant rooms</h3>
     </div>
 </div>
-<app-room-types></app-room-types>
+<div class="container">
+    <div class="title-home">
+        <h1 [style.fontSize.px]="fontSizeh1">Relax in comfort</h1>
+        <h2 [style.fontSize.px]="fontSizeh2">WITH OUR ROOMS</h2>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 p-3" *ngFor="let room of rooms">
+                <div class="card bg-dark-blue">
+                    <div class="img-container">
+                        <img class="card-img-top col-sm-12" src="{{room.url}}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-left" [style.fontSize.px]="fontSizeh5" >{{room.title | uppercase}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-left" style="font-weight: bold;" [style.fontSize.px]="fontSizeh6"> Bed: {{room.bed |
+                            uppercase}} | Bath: {{room.bath | uppercase}}</h6>
+                        <p class="card-text text-left" [style.fontSize.px]="fontSizep">{{room.desc}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-access (fontSizeChanged)="onFontSizeChanged($event)"></app-access>

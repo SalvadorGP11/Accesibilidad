@@ -8,4 +8,6 @@ import {faStar} from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent {
   faStar = faStar;
+
+
 }

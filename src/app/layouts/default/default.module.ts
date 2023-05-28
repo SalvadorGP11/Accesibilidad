@@ -39,13 +39,15 @@ import { TableReservedComponent } from 'src/app/modules/reservations/table-reser
 import { MatTableModule } from '@angular/material/table';
 import { ReservationsComponent } from 'src/app/modules/reservations/reservations.component';
 import { SatisfactionFormComponent } from 'src/app/modules/login/satisfaction-form/satisfaction-form.component';
-import { AccessComponent } from 'src/app/modules/access/access.component';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
-import { SharedModule } from 'src/app/shared/shared.module';
+
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 //import {MatDateFnsModule} from '@angular/material-date-fns-adapter';
 
 
@@ -77,8 +79,7 @@ import { MatIconModule } from '@angular/material/icon';
         ImgExploreComponent,
         ReservationsComponent,
         SatisfactionFormComponent,
-        TableReservedComponent,
-        AccessComponent
+        TableReservedComponent
     ],
     imports: [
         CommonModule,
@@ -99,9 +100,8 @@ import { MatIconModule } from '@angular/material/icon';
         NgIf,
         MatSidenavModule,
         MatButtonModule,
-        MatRadioModule,
-        MatMenuModule,
-        MatIconModule
+        MatRadioModule
     ]
+    
 })
 export class DefaultModule { }

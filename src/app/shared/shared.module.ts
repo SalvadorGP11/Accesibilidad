@@ -5,22 +5,33 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccessComponent } from '../modules/access/access.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AccessComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatIconModule,
+    MatMenuModule
+
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AccessComponent
   ]
+
+ 
 })
 export class SharedModule { }

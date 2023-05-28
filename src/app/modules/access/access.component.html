@@ -2,16 +2,40 @@
 <div class="containerS">
     <button mat-button [matMenuTriggerFor]="menu" class="mat-menu-trigger" id="boton-circular"><mat-icon class="icono-grande">accessibility</mat-icon></button>
     <mat-menu #menu="matMenu" class="mat-menu-overlay" >
-      <button mat-menu-item id="menu" ><mat-icon>record_voice_over</mat-icon>VOICE</button>
+      <div class="titulo">LECTOR</div>
+      <div class="lector"  id="menu">
+       <div class="accion">
+         <button mat-menu-item (click)="startReading()"><mat-icon>record_voice_over</mat-icon></button>
+         <span class="texto">Start</span>
+       </div>
+  <div class="accion">
+    <button mat-menu-item (click)="pauseReading()"><mat-icon>pause</mat-icon></button>
+    <span class="texto">Pause</span>
+  </div>
+</div>
+<div class="lector"  id="menu">
+  <div class="accion">
+    <button mat-menu-item (click)="resumeReading()"><mat-icon>play_arrow</mat-icon></button>
+    <span class="texto">Resume</span>
+  </div>
+  <div class="accion">
+    <button mat-menu-item (click)="stopReading()"><mat-icon>stop</mat-icon></button>
+    <span class="texto">Stop</span>
+  </div>
+</div>
+
+
+
       <div class="letra" id="menu">
         Fuente
-        <button mat-menu-item class="let" ><mat-icon>add_circle_outline</mat-icon></button>
-      <button mat-menu-item class="let" ><mat-icon>remove_circle_outline</mat-icon></button>
+        <button mat-menu-item class="let" (click)="increaseFontSize()"><mat-icon>add_circle_outline</mat-icon></button>
+      <button mat-menu-item class="let" (click)="decreaseFontSize()" ><mat-icon>remove_circle_outline</mat-icon></button>
       </div>
+
       <button mat-menu-item id="menu"><mat-icon >link</mat-icon>Enlaces renlace</button>
-      <button mat-menu-item id="menu"><mat-icon >mouse</mat-icon>Aumentar Cursor</button>
+      <button mat-menu-item id="menu" ><mat-icon >mouse</mat-icon>Aumentar Cursor</button>
       
-      
+  
+
     </mat-menu>
   </div>
-  

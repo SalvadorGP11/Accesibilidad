@@ -47,13 +47,10 @@ var table_reserved_component_1 = require("src/app/modules/reservations/table-res
 var table_1 = require("@angular/material/table");
 var reservations_component_1 = require("src/app/modules/reservations/reservations.component");
 var satisfaction_form_component_1 = require("src/app/modules/login/satisfaction-form/satisfaction-form.component");
-var access_component_1 = require("src/app/modules/access/access.component");
 var sidenav_1 = require("@angular/material/sidenav");
 var button_1 = require("@angular/material/button");
 var radio_1 = require("@angular/material/radio");
 var shared_module_1 = require("src/app/shared/shared.module");
-var menu_1 = require("@angular/material/menu");
-var icon_1 = require("@angular/material/icon");
 //import {MatDateFnsModule} from '@angular/material-date-fns-adapter';
 var DefaultModule = /** @class */ (function () {
     function DefaultModule() {
@@ -86,8 +83,7 @@ var DefaultModule = /** @class */ (function () {
                 img_explore_component_1.ImgExploreComponent,
                 reservations_component_1.ReservationsComponent,
                 satisfaction_form_component_1.SatisfactionFormComponent,
-                table_reserved_component_1.TableReservedComponent,
-                access_component_1.AccessComponent
+                table_reserved_component_1.TableReservedComponent
             ],
             imports: [
                 common_1.CommonModule,
@@ -108,9 +104,7 @@ var DefaultModule = /** @class */ (function () {
                 common_1.NgIf,
                 sidenav_1.MatSidenavModule,
                 button_1.MatButtonModule,
-                radio_1.MatRadioModule,
-                menu_1.MatMenuModule,
-                icon_1.MatIconModule
+                radio_1.MatRadioModule
             ]
         })
     ], DefaultModule);
