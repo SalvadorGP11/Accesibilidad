@@ -11,8 +11,6 @@ var core_1 = require("@angular/core");
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
         this.isTransparent = true;
-        this.fontSizeimg = 46; // Tamaño de fuente inicial
-        this.fontSizeA = 21;
     }
     HeaderComponent.prototype.onWindowScroll = function () {
         // Verificar la posición del scroll
@@ -24,10 +22,6 @@ var HeaderComponent = /** @class */ (function () {
             // Si la posición del scroll es menor que 50px, actualizar la propiedad 'isTransparent' a true
             this.isTransparent = true;
         }
-    };
-    HeaderComponent.prototype.onFontSizeChanged = function (delta) {
-        this.fontSizeimg += delta; // Ajusta el tamaño de fuente en función del delta recibido
-        this.fontSizeA += delta;
     };
     __decorate([
         core_1.HostListener('window:scroll', [])

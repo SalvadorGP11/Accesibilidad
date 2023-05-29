@@ -7,10 +7,9 @@ import { Component, HostListener} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  isTransparent: boolean = true;
-  fontSizeimg: number = 46; // Tamaño de fuente inicial
-  fontSizeA: number = 21;
 
+  isTransparent: boolean = true;
+  
   @HostListener('window:scroll', [])
   onWindowScroll() {
     // Verificar la posición del scroll
@@ -23,8 +22,5 @@ export class HeaderComponent {
     }
   }
 
-  onFontSizeChanged(delta: number) {
-    this.fontSizeimg += delta; // Ajusta el tamaño de fuente en función del delta recibido
-    this.fontSizeA += delta;
-  }
+ 
 }

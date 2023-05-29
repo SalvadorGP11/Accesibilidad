@@ -10,6 +10,7 @@ exports.RoomsComponent = void 0;
 var core_1 = require("@angular/core");
 var RoomsComponent = /** @class */ (function () {
     function RoomsComponent() {
+        this.mostrarImagenes = true;
         this.fontSizeh1 = 46; // Tamaño de fuente inicial
         this.fontSizeh3 = 30;
         this.fontSizeh2 = 38;
@@ -36,6 +37,9 @@ var RoomsComponent = /** @class */ (function () {
         this.fontSizeh5 += delta;
         this.fontSizeh6 += delta;
         this.fontSizep += delta;
+    };
+    RoomsComponent.prototype.onMostrarImagenesChanged = function (mostrar) {
+        this.mostrarImagenes = mostrar;
     };
     RoomsComponent = __decorate([
         core_1.Component({

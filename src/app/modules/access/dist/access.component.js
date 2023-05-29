@@ -13,14 +13,19 @@ var AccessComponent = /** @class */ (function () {
     function AccessComponent() {
         this.mode = new forms_1.FormControl('over');
         this.fontSizeChanged = new core_1.EventEmitter();
-        this.isCursorIncreased = false;
-        this.originalCursor = '';
-        this.isGuideVisible = false;
-        this.guidePositionX = 0;
-        this.guidePositionY = 0;
+        this.mostrarImagenes = true;
+        this.mostrarImagenesChanged = new core_1.EventEmitter();
+        this.defaultCursor = 'default';
+        this.increasedCursor = "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"var(--cursor-size)\" height=\"var(--cursor-size)\" viewBox=\"0 0 18 18\"><path fill=\"yellow\" d=\"M12 0l-6 12h12l-6-12z\"/></svg>') 6 6, auto";
         this.speechSynthesis = window.speechSynthesis;
         this.speechUtterance = new SpeechSynthesisUtterance();
     }
+    AccessComponent.prototype.increaseCursorSize = function () {
+        document.body.style.cursor = this.increasedCursor;
+    };
+    AccessComponent.prototype.resetCursorSize = function () {
+        document.body.style.cursor = this.defaultCursor;
+    };
     AccessComponent.prototype.startReading = function () {
         var textToRead = document.documentElement.innerText;
         this.speechUtterance.text = textToRead;
@@ -41,9 +46,19 @@ var AccessComponent = /** @class */ (function () {
     AccessComponent.prototype.decreaseFontSize = function () {
         this.fontSizeChanged.emit(-15); // Disminuye el tamaño de fuente en 2 píxeles
     };
+    AccessComponent.prototype.toggleImagenes = function () {
+        this.mostrarImagenes = !this.mostrarImagenes;
+        this.mostrarImagenesChanged.emit(this.mostrarImagenes);
+    };
     __decorate([
         core_1.Output()
     ], AccessComponent.prototype, "fontSizeChanged");
+    __decorate([
+        core_1.Input()
+    ], AccessComponent.prototype, "mostrarImagenes");
+    __decorate([
+        core_1.Output()
+    ], AccessComponent.prototype, "mostrarImagenesChanged");
     AccessComponent = __decorate([
         core_1.Component({
             selector: 'app-access',

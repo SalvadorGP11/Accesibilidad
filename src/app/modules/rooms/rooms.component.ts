@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./rooms.component.css']
 })
 export class RoomsComponent {
-
+  mostrarImagenes = true;
   fontSizeh1: number = 46; // Tamaño de fuente inicial
   fontSizeh3: number = 30;
   fontSizeh2: number = 38;
@@ -34,4 +34,8 @@ export class RoomsComponent {
     { title: "Room fifteen", bed: "1", bath: "3", desc: "Experience true comfort and relaxation in our stylishly designed room. Equipped with modern amenities, including a cozy bed, flat-screen TV, and high-speed internet, our room offers the perfect escape after a long day. Unwind in the tranquil ambiance, and enjoy a restful night's sleep in this cozy retreat.", url: 'assets/imgs/rooms/room6.jpg'},
     { title: "Room sixteen", bed: "3", bath: "1", desc: "Experience true comfort and relaxation in our stylishly designed room. Equipped with modern amenities, including a cozy bed, flat-screen TV, and high-speed internet, our room offers the perfect escape after a long day. Unwind in the tranquil ambiance, and enjoy a restful night's sleep in this cozy retreat.", url: 'assets/imgs/rooms/room15.webp'},
   ];
+
+  onMostrarImagenesChanged(mostrar: boolean) {
+    this.mostrarImagenes = mostrar;
+  }
 }

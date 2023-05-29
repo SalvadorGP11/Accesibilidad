@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 import {NgIf} from '@angular/common';
 
@@ -20,6 +20,9 @@ export class AccessComponent {
   mode = new FormControl('over' as MatDrawerMode);
 
   @Output() fontSizeChanged = new EventEmitter<number>();
+  @Input() mostrarImagenes = true;
+  @Output() mostrarImagenesChanged = new EventEmitter<boolean>();
+
 
    //API de síntesis de voz del navegador (Web Speech API)
   speechSynthesis: SpeechSynthesis;
@@ -64,6 +67,11 @@ export class AccessComponent {
 
   decreaseFontSize() {
     this.fontSizeChanged.emit(-15); // Disminuye el tamaño de fuente en 2 píxeles
+  }
+
+  toggleImagenes() {
+    this.mostrarImagenes = !this.mostrarImagenes;
+    this.mostrarImagenesChanged.emit(this.mostrarImagenes);
   }
 
 }
