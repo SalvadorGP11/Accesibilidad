@@ -28,9 +28,12 @@
 
   .letra{
     display: flex;
-    
     align-items: center;
     text-align: center;
+  }
+
+  .btn{
+    width: 40%;
   }
 
   #menu {
@@ -68,8 +71,7 @@
   
   .accion {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
   }
   
   .icon {
@@ -78,8 +80,7 @@
   }
   
   .texto {
-    font-size: 14px;
-
+    width: 50%;
   }
 
   

@@ -21,18 +21,20 @@ export class AccessComponent {
 
   @Output() fontSizeChanged = new EventEmitter<number>();
 
-
    //API de síntesis de voz del navegador (Web Speech API)
   speechSynthesis: SpeechSynthesis;
   speechUtterance: SpeechSynthesisUtterance;
 
-  isCursorIncreased: boolean = false;
-  originalCursor: string = '';
+  defaultCursor: string = 'default';
+  increasedCursor: string = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="var(--cursor-size)" height="var(--cursor-size)" viewBox="0 0 18 18"><path fill="yellow" d="M12 0l-6 12h12l-6-12z"/></svg>') 6 6, auto`;
 
-  isGuideVisible: boolean = false;
-  guidePositionX: number = 0;
-  guidePositionY: number = 0;
+  increaseCursorSize() {
+    document.body.style.cursor = this.increasedCursor;
+  }
 
+  resetCursorSize() {
+    document.body.style.cursor = this.defaultCursor;
+  }
   constructor() {
     this.speechSynthesis = window.speechSynthesis;
     this.speechUtterance = new SpeechSynthesisUtterance();
